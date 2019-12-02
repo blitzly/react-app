@@ -13,11 +13,52 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>React App</title>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <!-- Load Babel Compiler -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>React App - API</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <h1>I think it is working now</h1>
     <div id="root"></div>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        state = {
+          contacts: []
+        };
+        render() {
+          return (
+            <React.Fragment>
+              <h1>Contact Management</h1>
+              <table border="1" width="100%">
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Country</th>
+                  <th>City</th>
+                  <th>Job</th>
+                </tr>
+
+                {this.state.contacts.map(contact => (
+                  <tr>
+                    <td>{contact.name}</td>
+                    <td>{contact.email}</td>
+                    <td>{contact.country}</td>
+                    <td>{contact.city}</td>
+                    <td>{contact.job}</td>
+                  </tr>
+                ))}
+              </table>
+            </React.Fragment>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
   </body>
 </html>
