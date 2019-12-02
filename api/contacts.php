@@ -52,5 +52,5 @@ if ($method == 'GET') {
   } else {
     echo mysqli_affected_rows($con);
   }
-
+error_log("This is just a test");
 $con->close();
