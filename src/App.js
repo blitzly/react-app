@@ -6,7 +6,7 @@ import './App.css';
 
 class App extends Component {
   componentDidMount() {
-    const url = '/api/contacts.php';
+    const url = '../api/contacts.php';
     axios
       .get(url)
       .then(response => response.data)
