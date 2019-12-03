@@ -1,4 +1,5 @@
 <?php
+error_log("This is just a test");
 $host = "localhost"; 
 $user = "root"; 
 $password = "pr0sl1nk"; 
@@ -52,5 +53,5 @@ if ($method == 'GET') {
   } else {
     echo mysqli_affected_rows($con);
   }
-error_log("This is just a test");
+
 $con->close();
