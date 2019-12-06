@@ -5,6 +5,9 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    contacts: []
+  };
   componentDidMount() {
     const url =
       'http://ec2-18-253-68-107.us-gov-east-1.compute.amazonaws.com/react-app/api/contacts.php';
