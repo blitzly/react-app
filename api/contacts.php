@@ -20,7 +20,7 @@ if (!$con) {
 switch ($method) {
     case 'GET':
       $name = $_GET['name'];
-      $sql = "SELECT * FROM contacts".($name ?" WHERE name LIKE %$name% ":''); 
+      $sql = "SELECT * FROM contacts".($name ?" WHERE name LIKE %".$name."%.":''); 
       break;
     case 'POST':
       $name = $_POST["name"];
